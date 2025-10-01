@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container my-4">
+  <h3 class="mb-4">클래스 워크스페이스</h3>
+
+  {% for m in get_flashed_messages(with_categories=false) %}
+    <div class="alert alert-success">{{ m }}</div>
+  {% endfor %}
+
+  <div class="row g-3">
+    <!-- 생성 카드 -->
+    <div class="col-12 col-md-6 col-lg-4">
+      <a href="{{ url_for('course.create') }}" class="text-decoration-none">
+        <div class="border rounded-3 p-5 d-flex align-items-center justify-content-center"
+             style="min-height: 220px;">
+          <div class="text-center text-muted">
+            <div style="font-size:48px; line-height:1;">＋</div>
+            <div class="mt-2 fw-semibold">클래스 생성하기</div>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <!-- 등록된 클래스 목록 (데모용) -->
+    {% for c in courses %}
+    <div class="col-12 col-md-6 col-lg-4">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title">{{ c.classid }}</h5>
+          <p class="card-text text-muted">{{ c.description }}</p>
+          <div class="d-flex justify-content-between">
+            <span class="fw-bold">{{ "{:,}".format(c.price) }}원</span>
+            <a class="btn btn-sm btn-outline-primary" href="#">관리</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

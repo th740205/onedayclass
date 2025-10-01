@@ -1,0 +1,500 @@
+:root {
+  --bg: #faf7f4;
+  --card: #ffffff;
+  --muted: #7b7b7b;
+  --accent: #4a342b;
+  --primary: #ffb86b;
+  --radius: 14px;
+  --shadow: 0 8px 30px rgba(28, 20, 16, 0.08);
+  font-family: "Noto Sans KR", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+
+.navbar {
+  width: 100%;
+  padding: 16px 24px;
+  background: #fff;
+  box-shadow: var(--shadow);
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  font-weight: 600;
+}
+
+#mypage {
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  color: var(--accent);
+  background: linear-gradient(180deg, rgba(255,250,248,1) 0%, rgba(250,247,244,1) 100%);
+}
+
+.wrap {
+  display: grid;
+  grid-template-columns: 420px 360px;
+  gap: 28px;
+  max-width: 1100px;
+  width: 100%;
+}
+
+.hero {
+  background: linear-gradient(180deg, rgba(255,245,238,1), rgba(255,250,248,1));
+  border-radius: var(--radius);
+  padding: 28px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  min-height: 420px;
+}
+
+.brand {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.logo {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #ffefdb, #ffd6a8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--accent);
+}
+.brand h1 {
+  margin: 0;
+  font-size: 20px;
+}
+.brand p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+.hero p.lead {
+  font-size: 15px;
+  color: #5b5b5b;
+  line-height: 1.5;
+}
+
+.chip {
+  background: #fff;
+  border-radius: 10px;
+  padding: 8px 12px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.card {
+  background: var(--card);
+  border-radius: 18px;
+  padding: 22px;
+  box-shadow: var(--shadow);
+  min-height: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.tabs {
+  display: flex;
+  gap: 8px;
+}
+.tab {
+  padding: 10px 14px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--muted);
+}
+.tab.active {
+  background: linear-gradient(90deg, var(--primary), #ff9f5a);
+  color: #fff;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 6px;
+}
+label {
+  font-size: 13px;
+  color: var(--muted);
+}
+input {
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #eee;
+  font-size: 14px;
+  background: #fbfbfb;
+}
+.row {
+  display: flex;
+  gap: 10px;
+}
+.btn {
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 0;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 15px;
+}
+.btn-primary {
+  background: linear-gradient(90deg, var(--primary), #ff9f5a);
+  color: #fff;
+}
+.btn-ghost {
+  background: transparent;
+  border: 1px solid #eee;
+  color: var(--accent);
+}
+.error {
+  color: #d64545;
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+@media (max-width: 940px) {
+  .wrap {
+    grid-template-columns: 1fr;
+    max-width: 520px;
+  }
+  .hero {
+    order: 2;
+  }
+  .card {
+    order: 1;
+  }
+}
+=======
+button[type=submit] {
+    margin-top: 10px;
+}
+
+/* 기본 */
+body {
+  margin: 0;
+  //font-family: Arial, sans-serif;
+  background: #fafafa;
+  color: #333;
+  background-color: #f8f9fa; /* 은은한 회색 배경 */
+  font-family: 'Noto Sans KR', sans-serif;
+  //background: var(--bg);
+  //font-family: inherit;
+}
+
+/* 헤더 */
+header {
+  position: sticky;
+  top: 0;
+  background: #fff;
+  padding: 12px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  z-index: 10;
+}
+
+header nav a {
+  margin: 0 12px;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+header nav a:hover {
+  color: #000;
+  text-decoration: underline;
+}
+
+/* 배너 */
+.banner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+  padding: 50px 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.banner-text {
+  flex: 1 1 300px;
+}
+
+.banner-text h1 {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.banner-text p {
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.banner-text .btn {
+  display: inline-block;
+  padding: 10px 18px;
+  margin-right: 10px;
+  border-radius: 20px;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: black;
+  color: white;
+}
+
+.btn-outline {
+  border: 1px solid #aaa;
+  color: #333;
+}
+
+.banner img {
+  flex: 1 1 300px;
+  max-width: 450px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* 섹션 */
+section {
+  max-width: 1100px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+h2 {
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+/* 클래스 카드 */
+.courses {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.course {
+  flex: 1 1 240px;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.course:hover {
+  transform: translateY(-5px);
+}
+
+.course img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.course .info {
+  padding: 15px;
+}
+
+.course h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.course p {
+  margin: 5px 0;
+  font-size: 13px;
+  color: #666;
+}
+
+.course .price {
+  font-weight: bold;
+  margin-top: 8px;
+  color: #000;
+}
+
+/* 풋터 */
+footer {
+  background: #f5f5f5;
+  color: #555;
+  font-size: 13px;
+  padding: 30px 20px;
+}
+
+.footer-container {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-container > div {
+  flex: 1 1 200px;
+}
+
+.footer-links a {
+  color: #555;
+  margin-right: 10px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+
+
+/*  jmk 전체 컨테이너 */
+.qna-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  padding: 20px 28px;
+}
+
+/* 제목 */
+.h-title {
+  font-weight: 700;
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+  color: #333;
+  border-bottom: 3px solid #ff7f00;
+  padding-bottom: 10px;
+}
+
+/* 테이블 */
+.qna-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+.qna-table th {
+  background: linear-gradient(90deg, #ff7f00, #ff9f40);
+  color: white;
+  font-weight: 500;
+}
+.qna-table tr:nth-child(even) {
+  background-color: #fdf5ef;
+}
+.qna-table tr:hover {
+  background-color: #fff3e0;
+  transition: 0.2s;
+}
+.qna-table td a {
+  text-decoration: none;
+  color: #212529;
+}
+.qna-table td a:hover {
+  text-decoration: underline;
+  color: #ff7f00;
+}
+
+/* 버튼 */
+.btn-orange {
+  background-color: #ff7f00;
+  color: white;
+  border: none;
+  font-weight: 500;
+  border-radius: 8px;
+  padding: 10px 18px;
+  transition: all 0.2s ease;
+}
+.btn-orange:hover {
+  background-color: #e56f00;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(229,111,0,0.3);
+}
+
+/* 페이징 고정 */
+.paging-fixed {
+  position: fixed;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+}
+.paging-fixed .pagination {
+  margin: 0;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  padding: 6px 10px;
+}
+.paging-fixed .page-link {
+  color: #ff7f00;
+  border: none;
+}
+.paging-fixed .page-item.active .page-link {
+  background-color: #ff7f00;
+  color: #fff;
+  border-radius: 6px;
+  font-weight: 600;
+}
+.paging-fixed .page-link:hover {
+  background-color: #fff3e0;
+  border-radius: 6px;
+}
+
+
+
+.question-card {
+  border-left: 6px solid #ff7f00;
+  background-color: #fffaf5;
+}
+
+.answer-card:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: 0.2s;
+}
+
+.badge-date {
+  font-size: 0.85rem;
+  background: #f8f9fa;
+  border: 1px solid #ddd;
+}
+
+.status-done {
+    color: white;
+    background-color: green;
+    padding: 3px 6px;
+    border-radius: 5px;
+    font-size: 0.9em;
+}
+.status-pending {
+    color: white;
+    background-color: grey;
+    padding: 3px 6px;
+    border-radius: 5px;
+    font-size: 0.9em;
+}
+
+.qna-form-title {
+  font-weight: bold;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 10px;
+}
+
+.qna-form-card label {
+  font-weight: 500;
+  margin-bottom: 5px;
+  display: block;
+  color: #333;
+}

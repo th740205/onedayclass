@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>모카 클래스</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="logo"><strong>MochaClass</strong></div>
+        <nav>
+            <a href="#">클래스</a>
+            <a href="#">로그인</a>
+            <a href="#">회원가입</a>
+        </nav>
+    </header>
+
+    <!-- BANNER -->
+    <div class="banner">
+        <div class="banner-text">
+            <h1>새로운 취미, 한 번의 예약으로 시작하세요</h1>
+            <p>요리, 음악, 사진 등 다양한 원데이 클래스를 예약하고 즐겨보세요.</p>
+            <a href="#courses" class="btn btn-primary">클래스 등록</a>
+            <a href="#" class="btn btn-outline">궁금증 해결</a>
+        </div>
+        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=900&q=80"
+            alt="banner image">
+    </div>
+
+    <!-- COURSES -->
+    <section id="courses">
+        <h2>추천 클래스</h2>
+        <div class="courses">
+            <div class="course">
+                <img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=900&q=80"
+                    alt="쿠킹 클래스">
+                <div class="info">
+                    <h3>쿠킹 클래스</h3>
+                    <p>강사: 김요리</p>
+                    <div class="price">₩30,000</div>
+                </div>
+            </div>
+            <div class="course">
+                <img src="https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?auto=format&fit=crop&w=900&q=80"
+                    alt="디저트 클래스">
+                <div class="info">
+                    <h3>디저트 클래스</h3>
+                    <p>강사: 최디저트</p>
+                    <div class="price">₩40,000</div>
+                </div>
+            </div>
+            <div class="course">
+                <img src="https://images.unsplash.com/photo-1504208434309-cb69f4fe52b0?auto=format&fit=crop&w=900&q=80"
+                    alt="사진 클래스">
+                <div class="info">
+                    <h3>사진 클래스</h3>
+                    <p>강사: 박사진</p>
+                    <div class="price">₩50,000</div>
+                </div>
+            </div>
+            <div class="course">
+                <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=900&q=80"
+                    alt="드로잉 클래스">
+                <div class="info">
+                    <h3>드로잉 클래스</h3>
+                    <p>강사: 송드로잉</p>
+                    <div class="price">₩28,000</div>
+                </div>
+            </div>
+            <div class="course">
+                <img src="https://images.unsplash.com/photo-1552196563-55cd4e45efb3?auto=format&fit=crop&w=900&q=80"
+                    alt="요가 클래스">
+                <div class="info">
+                    <h3>요가 클래스</h3>
+                    <p>강사: 정요가</p>
+                    <div class="price">₩45,000</div>
+                </div>
+            </div>
+            <div class="course">
+                <img src="https://images.unsplash.com/photo-1510626176961-4b57d4fbad03?auto=format&fit=crop&w=900&q=80"
+                    alt="칵테일 클래스">
+                <div class="info">
+                    <h3>칵테일 클래스</h3>
+                    <p>강사: 오칵테일</p>
+                    <div class="price">₩55,000</div>
+                </div>
+            </div>
+            <div class="course">
+                <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=900&q=80"
+                    alt="커피 클래스">
+                <div class="info">
+                    <h3>커피 클래스</h3>
+                    <p>강사: 윤바리스타</p>
+                    <div class="price">₩32,000</div>
+                </div>
+            </div>
+            <div class="course">
+                <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=900&q=80"
+                    alt="음악 클래스">
+                <div class="info">
+                    <h3>음악 클래스</h3>
+                    <p>강사: 임뮤직</p>
+                    <div class="price">₩60,000</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-top">
+                <strong>Mocha Class</strong><br>
+                일상의 따뜻한 휴식과 새로운 경험, 모카클래스<br>
+                <strong>Let’s make more chance with Mocha class</strong>
+            </div>
+            <div class="footer-links">
+                <a href="#">App Store</a>
+                <a href="#">Google Play</a>
+                <a href="#">이용약관</a>
+                <a href="#">개인정보처리방침</a>
+                <a href="#">사업자정보확인</a>
+                <a href="#">서비스소개</a>
+            </div>
+            <div class="footer-info">
+                © <strong>주식회사 레디킨즈</strong> | 대표 <strong>정종학</strong><br>
+                사업자등록번호 : <strong>285-81-02364</strong> | 통신판매번호 : <strong>2021-부산금정-0652</strong><br>
+                주소 : 부산광역시 금정구 부산대학로 50번길 68, PNUAVEC 304호<br>
+                서울특별시 종로구 동숭길 127, 5층 킹고 스타트업 스페이스<br>
+                Tel : <strong>070-7576-1572</strong> (평일 10:00 ~ 20:00)<br>
+                E-mail : <strong>hello-admin@mochaclass.com</strong>
+            </div>
+            <div class="footer-center">
+                <strong>고객 센터 ></strong><br>
+                평일 : 10:00 ~ 20:00 (주말, 공휴일 제외)<br>
+                점심 시간 : 12:00 ~ 13:30
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
