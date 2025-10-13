@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+{% block title %}예약 내역{% endblock %}
+
+{% block content %}
+<h2 class="mb-3">예약 내역</h2>
+
+<a href="{{ url_for('reservations.reservation_form') }}" class="btn btn-warning mb-3">+ 새 예약</a>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>클래스명</th>
+      <th>날짜</th>
+      <th>시간</th>
+      <th>상태</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for r in reservations %}
+    <tr>
+      <td>{{ r.class_name }}</td>
+      <td>{{ r.reserved_date.strftime('%Y-%m-%d') }}</td>
+      <td>{{ r.reserved_time }}</td>
+      <td>{{ r.status }}</td>
+      <td>
+        <a href="{{ url_for('reservations.reservation_detail', res_id=r.id) }}" class="btn btn-sm btn-outline-warning">상세</a>
+      </td>
+    </tr>
+    {% else %}
+    <tr>
+      <td colspan="5" class="text-center">예약이 없습니다.</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
