@@ -1,21 +1,10 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<!-- HEADER -->
-<header>
-    <div class="logo"><strong>MochaClass</strong></div>
-    <nav>
-         <!-- 🔍 검색창을 가장 왼쪽에 배치 -->
-        <form action="/search" method="GET" class="search-form">
-          <input type="text" name="query" placeholder="검색어 입력..." />
-          <button type="submit">검색</button>
-        </form>
-
-        <a href="#">클래스</a>
-        <a href="{{url_for('auth.login')}}">로그인</a>
-        <a href="{{url_for('auth.signup')}}">회원가입</a>
-    </nav>
-</header>
+<link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+  />
 <section class="explore-ui">
   <!-- 상단 필터 박스 -->
   <div class="top-filters">
@@ -35,7 +24,7 @@
           <button><span>🎁</span> 선물</button>
           <button><span>🧡</span> 데이트</button>
           <button><span>🧚</span> 향수</button>
-          <button><span>🏃&zwj;♀️</span> 스포츠</button>
+          <button><span>🏃&zwj;</span> 스포츠</button>
           <button><span>🪵</span> 목공</button>
           <button><span>🏺</span> 도자기</button>
       </nav>
