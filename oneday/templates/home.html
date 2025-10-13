@@ -1,27 +1,5 @@
 
-{% extends "base.html" %}
-
-<html lang="ko">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>모카 클래스</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
-
-<body>
-
-    <!-- HEADER -->
-    <header>
-        <div class="logo"><strong>MochaClass</strong></div>
-        <nav>
-            <a href="/course">클래스</a>
-            <a href="/auth/login">로그인</a>
-            <a href="/auth/login">회원가입</a>
-        </nav>
-    </header>
-
+{% extends 'base.html' %}
 
 {% block content %}
     <!-- BANNER -->
@@ -163,4 +141,5 @@
             </div>
         </div>
     </footer>
+
 {% endblock %}
