@@ -1,5 +1,4 @@
 {% extends "base.html" %}
-
 {% block title %}예약 입력{% endblock %}
 
 {% block content %}
@@ -35,6 +34,7 @@
       </select>
     </div>
 
+
     <button type="submit" class="btn btn-warning">저장</button>
     <a href="{{ url_for('reservations.reservation_list') }}" class="btn btn-secondary">취소</a>
   </form>
@@ -50,4 +50,6 @@
   </form>
   {% endif %}
 </div>
+  <a href="{{ url_for('reservations.reservation_list') }}" class="btn btn-secondary">취소</a>
+</form>
 {% endblock %}
