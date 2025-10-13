@@ -22,6 +22,7 @@ def create_app():
     app.config.from_object(config)
 
 
+
     os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
     # ORM 적용
 
