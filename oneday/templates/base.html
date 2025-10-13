@@ -4,11 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Bootstrap CDN -->
+    <!--bootstrap cdn-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
-    <!-- Custom CSS -->
+    <!--pyb css-->
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-
 
     <title>Pybo 게시판</title>
 
@@ -23,10 +22,10 @@
       }
       main#site-main { flex: 1; }
     </style>
-
 </head>
 <body>
-
+<!--네비게이션바-->
+{% include 'navbar.html' %}
 
 <main id="site-main">
 {% block content %}{% endblock %}
@@ -69,7 +68,6 @@
 <script>
 {% block script %}{% endblock %}
 </script>
-
 
 </body>
 </html>

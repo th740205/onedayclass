@@ -4,7 +4,7 @@
 <div class="container my-4 qna-form-container">
     <div class="qna-form-card">
         <h5 class="qna-form-title">✏️ 질문등록</h5>
-        <form method="post" class="my-3" enctype="multipart/form-data">
+        <form method="post" class="my-3">
             {{ form.csrf_token }}
 
             <!-- 오류 표시 -->
@@ -37,10 +37,6 @@
             </div>
 
             <!-- 버튼 -->
-        <div class="mb-3">
-            <label for="image">이미지 첨부</label>
-            <input type="file" name="image" id="image" class="form-control">
-        </div>
             <button type="submit" class="btn btn-orange">저장하기</button>
         </form>
     </div>

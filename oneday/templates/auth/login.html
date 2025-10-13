@@ -1,21 +1,136 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="container">
-    <h5 class="my-3 border-bottom pb-2">로그인</h5>
-    <form method="post">
-        {{ form.csrf_token }}
-        {% include 'form_errors.html' %}
-        <div class="mb-3">
-            <label for="username">사용자 이름</label>
-            <input type="text" name="username" id="username" class="form-control"
-                   value="{{ form.username.data or '' }}">
-        </div>
-        <div class="mb-3">
-            <label for="password">비밀번호</label>
-            <input type="password" name="password" id="password" class="form-control"
-                   value="{{ form.password.data or '' }}">
-        </div>
-        <button type="submit" class="btn btn-primary">로그인</button>
-    </form>
+<div id="mypage">
+    <div class="wrap">
+        <!-- 왼쪽 소개 -->
+        <aside class="hero">
+            <div class="brand">
+                <div class="logo">M</div>
+                <div>
+                    <h1>모카클래스</h1>
+                    <p>슬기로운 취미 생활</p>
+                </div>
+            </div>
+            <p class="lead">원데이 클래스, 핸드메이드, 베이킹 등 다양한 수업을 찾아보세요.</p>
+            <div class="chip">간편 예약</div>
+            <div class="chip">리뷰 추천</div>
+        </aside>
+
+        <!-- 오른쪽 카드 -->
+        <main class="card">
+            <div class="tabs">
+                <div class="tab active" data-tab="login">로그인</div>
+                <div class="tab" data-tab="signup">회원가입</div>
+            </div>
+
+            <!-- 로그인 -->
+            <section id="login" class="panel">
+                <form id="loginForm">
+                    {{ form.csrf_token }}
+                    {% include 'form_errors.html' %}
+                    <label for="loginEmail">이메일</label>
+                    <input id="loginEmail" name="email" type="email" required>
+                    <label for="loginPw">비밀번호</label>
+                    <input id="loginPw" name="password" type="password" required>
+                    <button type="submit" class="btn btn-primary">로그인</button>
+                    <div id="loginError" class="error" style="display:none;"></div>
+                </form>
+            </section>
+
+            <!-- 회원가입 -->
+            <section id="signup" class="panel" style="display:none;">
+                <form id="signupForm">
+                    <label for="name">이름</label>
+                    <input id="name" name="name" type="text" required>
+                    <label for="signupEmail">이메일</label>
+                    <input id="signupEmail" name="email" type="email" required>
+                    <label for="signupPw">비밀번호</label>
+                    <input id="signupPw" name="password" type="password" required>
+                    <label for="signupPw2">비밀번호 확인</label>
+                    <input id="signupPw2" name="password2" type="password" required>
+                    <button type="submit" class="btn btn-primary">회원가입</button>
+                    <div id="signupError" class="error" style="display:none;"></div>
+                </form>
+            </section>
+        </main>
+    </div>
 </div>
+{% endblock %}
+
+{% block script %}
+// 탭 전환
+document.querySelectorAll(".tab").forEach(tab=>{
+  tab.addEventListener("click", ()=>{
+    document.querySelectorAll(".tab").forEach(t=>t.classList.remove("active"));
+    tab.classList.add("active");
+    document.querySelectorAll(".panel").forEach(p=>p.style.display="none");
+    document.getElementById(tab.dataset.tab).style.display="block";
+  });
+});
+
+// 로그인 처리
+const loginForm = document.getElementById("loginForm");
+loginForm.addEventListener("submit", async (ev)=>{
+  ev.preventDefault();
+  const email = loginForm.email.value.trim();
+  const password = loginForm.password.value.trim();
+  const err = document.getElementById("loginError");
+  err.style.display="none";
+
+  try {
+    const res = await fetch("http://127.0.0.1:5000/api/login", {
+      method:"POST",
+      headers:{"Content-Type":"application/json"},
+      body:JSON.stringify({email,password}),
+      credentials:"include"
+    });
+    const data = await res.json();
+    if(data.success){
+      alert(`${data.name}님 환영합니다!`);
+    } else {
+      err.textContent=data.msg;
+      err.style.display="block";
+    }
+  } catch(e){
+    err.textContent="서버 오류 발생";
+    err.style.display="block";
+  }
+});
+
+// 회원가입 처리
+const signupForm = document.getElementById("signupForm");
+signupForm.addEventListener("submit", async (ev)=>{
+  ev.preventDefault();
+  const name = signupForm.name.value.trim();
+  const email = signupForm.email.value.trim();
+  const pw = signupForm.password.value;
+  const pw2 = signupForm.password2.value;
+  const err = document.getElementById("signupError");
+  err.style.display="none";
+
+  if(pw !== pw2){
+    err.textContent="비밀번호가 일치하지 않습니다.";
+    err.style.display="block";
+    return;
+  }
+  try {
+    const res = await fetch("http://127.0.0.1:5000/api/signup", {
+      method:"POST",
+      headers:{"Content-Type":"application/json"},
+      body:JSON.stringify({name,email,password:pw}),
+      credentials:"include"
+    });
+    const data = await res.json();
+    if(data.success){
+      alert(data.msg);
+      document.querySelector('.tab[data-tab="login"]').click();
+    } else {
+      err.textContent=data.msg;
+      err.style.display="block";
+    }
+  } catch(e){
+    err.textContent="서버 오류 발생";
+    err.style.display="block";
+  }
+});
 {% endblock %}
