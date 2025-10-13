@@ -1,4 +1,5 @@
-{% extends "layout.html" %}
+{% extends "base.html" %}
+
 {% block title %}예약 내역{% endblock %}
 
 {% block content %}
@@ -6,7 +7,7 @@
 
 <a href="{{ url_for('reservations.reservation_form') }}" class="btn btn-warning mb-3">+ 새 예약</a>
 
-<table class="table table-striped">
+<table class="table table-striped reservation-table">
   <thead>
     <tr>
       <th>클래스명</th>
