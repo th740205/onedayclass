@@ -3,14 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CDN -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <title>Pybo 게시판</title>
+
+    <title>모카 클래스</title>
 </head>
 <body>
-{% include 'navbar.html' %}
-{% block content %}{% endblock %}
+
+<!-- HEADER (Navbar 포함) -->
+<header>
+    {% include 'navbar.html' %}
+</header>
+
+<!-- MAIN CONTENT -->
+<main>
+    <div class="container my-4">
+        {% block content %}
+        {% endblock %}
+    </div>
+</main>
+
+<!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-{% block script %}{% endblock %}
+
+{% block script %}
+{% endblock %}
+
 </body>
 </html>
