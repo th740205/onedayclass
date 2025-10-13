@@ -27,10 +27,91 @@ body {
   align-items: center;
   font-weight: 600;
   box-shadow: var(--shadow);
+  min-height: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
   position: sticky;
   top: 0;
   z-index: 10;
 }
+
+.tabs {
+  display: flex;
+  gap: 8px;
+}
+.tab {
+  padding: 10px 14px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--muted);
+}
+.tab.active {
+  background: linear-gradient(90deg, var(--primary), #ff9f5a);
+  color: #fff;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 6px;
+}
+label {
+  font-size: 13px;
+  color: var(--muted);
+}
+input {
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #eee;
+  font-size: 14px;
+  background: #fbfbfb;
+}
+
+.row {
+  display: flex;
+  gap: 10px;
+}
+
+.btn {
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 0;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 15px;
+}
+.btn-primary {
+  background: linear-gradient(90deg, var(--primary), #ff9f5a);
+  color: #fff;
+}
+.btn-ghost {
+  background: transparent;
+  border: 1px solid #eee;
+  color: var(--accent);
+}
+.error {
+  color: #d64545;
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+@media (max-width: 940px) {
+  .wrap {
+    grid-template-columns: 1fr;
+    max-width: 520px;
+  }
+  .hero {
+    order: 2;
+  }
+  .card {
+    order: 1;
+  }
+}
+
 
 header nav a {
   margin: 0 12px;

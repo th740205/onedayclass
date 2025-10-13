@@ -1,4 +1,5 @@
 from oneday import db
+from sqlalchemy.sql import func
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -15,6 +16,7 @@ class Question(db.Model):
     user = db.relationship('User', backref=db.backref('question_set'))
     modify_date = db.Column(db.DateTime(), nullable=True)
     image_path = db.Column(db.String(200), nullable=True)
+    user=db.relationship('User', backref=db.backref('question_set'))
 
 
 
@@ -52,6 +54,19 @@ class Course(db.Model):
     created_at = db.Column(db.DateTime, nullable=False,
                            server_default=db.func.now())             # 생성시각(DB가 기록)
     duration_minutes = db.Column(db.Integer, nullable=False, default=60)
+    is_published = db.Column(db.Boolean, default=False, nullable=False)
+    image_path = db.Column(db.String(200), nullable=True)
+
+    # 추가 이미지 (옵션)
+    images = db.relationship("CourseImage", backref="course", lazy="selectin", cascade="all, delete-orphan")
+
+
+class CourseImage(db.Model):
+    __tablename__ = "course_image"
+    id = db.Column(db.Integer, primary_key=True)
+    course_id = db.Column(db.Integer, db.ForeignKey("course.id", ondelete="CASCADE"), nullable=False, index=True)
+    path = db.Column(db.String(200), nullable=False)
+    created_at = db.Column(db.DateTime, server_default=func.now())
 
     def __repr__(self):
-        return f"<Course {self.classid}>"
+        return f"<CourseImage course_id={self.course_id} path={self.path!r}>"

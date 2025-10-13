@@ -4,6 +4,7 @@ from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import MetaData
 
 import config
+import os
 
 nameing_convention = {
     'ix': 'ix_%(column_0_label)s',
@@ -20,7 +21,10 @@ def create_app():
     app = Flask(__name__)
     app.config.from_object(config)
 
-    # ORM
+
+    os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
+    # ORM 적용
+
     db.init_app(app)
     if app.config['SQLALCHEMY_DATABASE_URI'].startswith('sqlite'):
         migrate.init_app(app, db, render_as_batch=True)
