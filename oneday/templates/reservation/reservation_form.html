@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "layout.html" %}
 {% block title %}예약 입력{% endblock %}
 
 {% block content %}
@@ -37,16 +37,4 @@
     <button type="submit" class="btn btn-warning">저장</button>
   <a href="{{ url_for('reservations.reservation_list') }}" class="btn btn-secondary">취소</a>
 </form>
-
-
-    {% if reservation %}
-  <form method="post"
-        action="{{ url_for('reservations.delete_reservation', res_id=reservation.id) }}"
-        style="display:inline;">
-    <button type="submit" class="btn btn-danger"
-            onclick="return confirm('정말 삭제하시겠습니까?');">
-      삭제
-    </button>
-  </form>
-{% endif %}
 {% endblock %}

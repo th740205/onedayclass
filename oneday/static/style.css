@@ -28,6 +28,7 @@ body {
   font-weight: 600;
 }
 
+
 .wrap {
   display: grid;
   grid-template-columns: 420px 360px;
@@ -63,7 +64,6 @@ body {
   font-weight: 700;
   font-size: 20px;
   color: var(--accent);
-  margin-left:20px;
 }
 .brand h1 {
   margin: 0;
@@ -133,113 +133,11 @@ input {
   font-size: 14px;
   background: #fbfbfb;
 }
-.row {
-  display: flex;
-  gap: 10px;
-}
-.btn {
-  padding: 12px 14px;
-  border-radius: 10px;
-  border: 0;
-  cursor: pointer;
-  font-weight: 700;
-  font-size: 15px;
-}
-.btn-primary {
-  background: linear-gradient(90deg, var(--primary), #ff9f5a);
-  color: #fff;
-}
-.btn-ghost {
-  background: transparent;
-  border: 1px solid #eee;
-  color: var(--accent);
-}
-.error {
-  color: #d64545;
-  font-size: 13px;
-  margin-top: 4px;
-}
-
-@media (max-width: 940px) {
-  .wrap {
-    grid-template-columns: 1fr;
-    max-width: 520px;
-  }
-  .hero {
-    order: 2;
-  }
-  .card {
-    order: 1;
-  }
-}
-
-/* 기본 */
-body {
-  margin: 0;
-  //font-family: Arial, sans-serif;
-  background: #fafafa;
-  color: #333;
-  background-color: #f8f9fa; /* 은은한 회색 배경 */
-  font-family: 'Noto Sans KR', sans-serif;
-  //background: var(--bg);
-  //font-family: inherit;
-}
-
-/* 헤더 */
-/* 헤더 스타일 */
-header {
-  position: sticky;
-  top: 0;
-  background: #fff;
-  padding: 12px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  z-index: 10;
-}
-
-.tabs {
-  display: flex;
-  gap: 8px;
-}
-.tab {
-  padding: 10px 14px;
-  border-radius: 12px;
-  cursor: pointer;
-  font-weight: 600;
-  font-size: 14px;
-  color: var(--muted);
-}
-.tab.active {
-  background: linear-gradient(90deg, var(--primary), #ff9f5a);
-  color: #fff;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  margin-top: 6px;
-}
-label {
-  font-size: 13px;
-  color: var(--muted);
-}
-input {
-  padding: 12px 14px;
-  border-radius: 10px;
-  border: 1px solid #eee;
-  font-size: 14px;
-  background: #fbfbfb;
-}
-
 
 .row {
   display: flex;
   gap: 10px;
 }
-
 
 .btn {
   padding: 12px 14px;
@@ -472,6 +370,13 @@ h2 { font-size: 22px; margin-bottom: 20px; }
   text-decoration: none;  /* 호버 시에도 밑줄 제거 */
 }
 
+/* 풋터 */
+footer { color: #555; font-size: 13px; padding: 30px 20px; }
+.footer-container { max-width: 1100px; margin: auto; display: flex; flex-wrap: wrap; gap: 20px; }
+.footer-container > div { flex: 1 1 200px; }
+.footer-links a { color: #555; margin-right: 10px; text-decoration: none; font-weight: 600; }
+.footer-links a:hover { text-decoration: underline; }
+
 /*  jmk 전체 컨테이너 */
 .qna-container {
   max-width: 1100px;
@@ -611,6 +516,7 @@ h2 { font-size: 22px; margin-bottom: 20px; }
   display: block;
   color: #333;
 }
+
 /* --- Popular Slider 스타일 (수정) --- */
 .site-width {
   max-width: 1100px;
@@ -811,6 +717,7 @@ footer { color: #555; font-size: 13px; padding: 30px 20px; }
 .footer-container > div { flex: 1 1 200px; }
 .footer-links a { color: #555; margin-right: 10px; text-decoration: none; font-weight: 600; }
 .footer-links a:hover { text-decoration: underline; }
+
 
 /*  jmk 전체 컨테이너 */
 .qna-container {
@@ -1251,5 +1158,3 @@ footer { color: #555; font-size: 13px; padding: 30px 20px; }
   background-color: #e3a45c;
   transform: translateX(-50%) translateY(-2px);
 }
-
-.tabcontent button:hover { background-color: #e3a45c; transform: translateX(-50%) translateY(-2px); }
