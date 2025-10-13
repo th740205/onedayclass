@@ -1158,3 +1158,9 @@ footer { color: #555; font-size: 13px; padding: 30px 20px; }
   background-color: #e3a45c;
   transform: translateX(-50%) translateY(-2px);
 }
+
+/*클래스신청*/
+#reservation {
+    max-width: 1100px;
+    margin: 0 auto;
+}
