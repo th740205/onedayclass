@@ -6,11 +6,13 @@
 
     <!-- Bootstrap CDN -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+    <!-- swipercdn-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 
 
-    <title>Pybo 게시판</title>
+    <title>모카클래스</title>
 
     <!-- sticky footer 레이아웃 -->
     <style>
@@ -27,7 +29,7 @@
 </head>
 <body>
 
-
+{% include 'navbar.html' %}
 <main id="site-main">
 {% block content %}{% endblock %}
 </main>

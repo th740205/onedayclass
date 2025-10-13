@@ -234,10 +234,12 @@ input {
   background: #fbfbfb;
 }
 
+
 .row {
   display: flex;
   gap: 10px;
 }
+
 
 .btn {
   padding: 12px 14px;
@@ -273,6 +275,10 @@ input {
   .card {
     order: 1;
   }
+}
+
+button[type=submit] {
+    margin-top: 10px;
 }
 
 /* 기본 */
@@ -372,7 +378,7 @@ nav a:hover {
 
 }
 .filter-box{
-    width:18%;
+    width:20%;
     border-radius:15px;
     background-color:white;
     padding:20px;
@@ -402,6 +408,7 @@ nav a:hover {
 .banner {
   display: flex;
   flex-wrap: wrap;
+  justify-content:space-between;
   align-items: center;
   gap: 20px;
   padding: 50px 20px;
@@ -687,7 +694,7 @@ h2 { font-size: 22px; margin-bottom: 20px; }
   justify-content: center;
   box-shadow: 0 6px 18px rgba(0,0,0,0.12);
 }
-.slider-control.prev { left: 6px; }
+.slider-control.prev { left: 30px; }
 .slider-control.next { right: 6px; }
 .slider-control:focus { outline: 2px solid rgba(255,255,255,0.12); }
 
@@ -796,6 +803,7 @@ body {
     .swiper-pagination-bullet {
       background: #f97316;
     }
+
 
 /* 풋터 */
 footer { color: #555; font-size: 13px; padding: 30px 20px; }
