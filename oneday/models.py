@@ -17,8 +17,7 @@ class Question(db.Model):
     modify_date = db.Column(db.DateTime(), nullable=True)
     image_path = db.Column(db.String(200), nullable=True)
     user=db.relationship('User', backref=db.backref('question_set'))
-
-
+    user=db.relationship('User', backref=db.backref('question_set'))
 
 class Answer(db.Model):
     id = db.Column(db.Integer, primary_key=True)
