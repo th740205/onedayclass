@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 
 
-    <title>Pybo 게시판</title>
+    <title>모카 클래스</title>
 
     <!-- sticky footer 레이아웃 -->
     <style>
@@ -27,6 +27,7 @@
 </head>
 <body>
 
+{% include 'navbar.html' %}
 
 <main id="site-main">
 {% block content %}{% endblock %}
