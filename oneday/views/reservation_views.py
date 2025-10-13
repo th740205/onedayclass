@@ -57,4 +57,13 @@ def reservation_form(res_id=None):
 
     return render_template("reservation/reservation_form.html", reservation=reservation)
 
+# 예약 삭제
+@bp.route("/<int:res_id>/delete", methods=["POST"])
+def delete_reservation(res_id):
+    reservation = Reservation.query.get_or_404(res_id)
+    db.session.delete(reservation)
+    db.session.commit()
+    return redirect(url_for("reservations.reservation_list"))
+
+
 

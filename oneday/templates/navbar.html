@@ -1,7 +1,7 @@
 <!--내비게이션바-->
 <nav class="navbar navbar-expand-sm bg-body-tertiary">
     <div class="container-fluid">
-        <a class="navbar-brand" href="{{ url_for('main.index') }}">Mochaclass</a>
+        <a class="navbar-brand" href="{{ url_for('main.home') }}">Mochaclass</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -13,7 +13,7 @@
                        href="{{ url_for('auth.signup') }}">회원가입</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="">로그인</a>
+                    <a class="nav-link" href="{{ url_for('auth.login') }}">로그인</a>
                 </li>
             </ul>
         </div>

@@ -1,32 +1,13 @@
-<!DOCTYPE html>
-<html lang="ko">
+{% extends "base.html" %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>모카 클래스</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
-
-<body>
-
-    <!-- HEADER -->
-    <header>
-        <div class="logo"><strong>MochaClass</strong></div>
-        <nav>
-            <a href="#">클래스</a>
-            <a href="#">로그인</a>
-            <a href="#">회원가입</a>
-        </nav>
-    </header>
-
+{% block content %}
     <!-- BANNER -->
     <div class="banner">
         <div class="banner-text">
             <h1>새로운 취미, 한 번의 예약으로 시작하세요</h1>
             <p>요리, 음악, 사진 등 다양한 원데이 클래스를 예약하고 즐겨보세요.</p>
-            <a href="#courses" class="btn btn-primary">클래스 등록</a>
-            <a href="#" class="btn btn-outline">궁금증 해결</a>
+            <a href="{{ url_for('reservations.reservation_list') }}" class="btn btn-primary">클래스 예약</a>
+            <a href="{{ url_for('question._list') }}" class="btn btn-outline">궁금증 해결</a>
         </div>
         <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=900&q=80"
             alt="banner image">
@@ -109,7 +90,12 @@
                 </div>
             </div>
         </div>
+
     </section>
+
+
+
+
 
     <!-- FOOTER -->
     <footer>
@@ -142,7 +128,4 @@
             </div>
         </div>
     </footer>
-
-</body>
-
-</html>
+{% endblock %}
