@@ -17,6 +17,7 @@ class Question(db.Model):
     image_path = db.Column(db.String(200), nullable=True)
 
 
+
 class Answer(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     question_id = db.Column(db.Integer, db.ForeignKey('question.id', ondelete='CASCADE'))
