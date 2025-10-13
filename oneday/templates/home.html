@@ -1,28 +1,14 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<!-- HEADER -->
-<header>
-    <div class="logo"><strong>MochaClass</strong></div>
-    <nav>
-         <!-- 🔍 검색창을 가장 왼쪽에 배치 -->
-        <form action="/search" method="GET" class="search-form">
-          <input type="text" name="query" placeholder="검색어 입력..." />
-          <button type="submit">검색</button>
-        </form>
 
-        <a href="#">클래스</a>
-        <a href="{{url_for('auth.login')}}">로그인</a>
-        <a href="{{url_for('auth.signup')}}">회원가입</a>
-    </nav>
-</header>
 <section class="explore-ui">
   <!-- 상단 필터 박스 -->
   <div class="top-filters">
       <div class="filter-box active">📍 <span>내 주변 클래스</span></div>
     <div class="filter-box">🗺️ <span>지역</span></div>
     <div class="filter-box">📂 <span>카테고리</span></div>
-    <div class="filter-box">🎡 <span>언터테인먼트/여행</span></div>
+    <div class="filter-box">🎡 <span>엔터테인먼트/여행</span></div>
   </div>
 
   <!-- 하단 카테고리 원형 버튼 -->
@@ -35,7 +21,7 @@
           <button><span>🎁</span> 선물</button>
           <button><span>🧡</span> 데이트</button>
           <button><span>🧚</span> 향수</button>
-          <button><span>🏃&zwj;♀️</span> 스포츠</button>
+          <button><span>🏃&zwj;</span> 스포츠</button>
           <button><span>🪵</span> 목공</button>
           <button><span>🏺</span> 도자기</button>
       </nav>
@@ -54,10 +40,7 @@
         </div>
         <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=900&q=80"
             alt="banner image">
-    </div>
-    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=900&q=80"
-         alt="banner image">
-</div>
+        </div>
 
     <!-- COURSES -->
     <section id="courses">
@@ -198,7 +181,7 @@
             </div>
         </div>
     </div>
-</section>
+
 
 <!-- 슬라이드 구조 -->
 <div class="swiper mySwiper">
@@ -253,39 +236,7 @@
 </div>
 
 
-<!-- FOOTER -->
-<footer>
-    <div class="footer-container">
-        <div class="footer-top">
-            <strong>Mocha Class</strong><br>
-            일상의 따뜻한 휴식과 새로운 경험, 모카클래스<br>
-            <strong>Let’s make more chance with Mocha class</strong>
-        </div>
-        <div class="footer-links">
-            <a href="#">App Store</a>
-            <a href="#">Google Play</a>
-            <a href="#">이용약관</a>
-            <a href="#">개인정보처리방침</a>
-            <a href="#">사업자정보확인</a>
-            <a href="#">서비스소개</a>
-        </div>
-        <div class="footer-info">
-            © <strong>주식회사 레디킨즈</strong> | 대표 <strong>정종학</strong><br>
-            사업자등록번호 : <strong>285-81-02364</strong> | 통신판매번호 : <strong>2021-부산금정-0652</strong><br>
-            주소 : 부산광역시 금정구 부산대학로 50번길 68, PNUAVEC 304호<br>
-            서울특별시 종로구 동숭길 127, 5층 킹고 스타트업 스페이스<br>
-            Tel : <strong>070-7576-1572</strong> (평일 10:00 ~ 20:00)<br>
-            E-mail : <strong>hello-admin@mochaclass.com</strong>
-        </div>
-        <div class="footer-center">
-            <strong>고객 센터 ></strong><br>
-            평일 : 10:00 ~ 20:00 (주말, 공휴일 제외)<br>
-            점심 시간 : 12:00 ~ 13:30
-        </div>
-    </div>
-</footer>
-
-<!-- Swiper JS -->
+    <!-- Swiper JS -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
     //

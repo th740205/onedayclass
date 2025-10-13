@@ -2,6 +2,7 @@
 {% block title %}예약 입력{% endblock %}
 
 {% block content %}
+<div id="reservation">
 <h2 class="mb-3">{{ '예약 수정' if reservation else '새 예약' }}</h2>
 
 <form method="post">
@@ -48,5 +49,6 @@
       삭제
     </button>
   </form>
+</div>
 {% endif %}
 {% endblock %}
