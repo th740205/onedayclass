@@ -9,29 +9,22 @@
   <table class="table qna-table">
     <thead>
       <tr>
-        <th style="width:80px;">번호</th>
-        <th>제목</th>
-        <th style="width:220px;">작성일시</th>
-          <th>답변상태</th>
+        <th style="width:6%;">번호</th>
+        <th style="width:55%;">제목</th>
+        <th style="width:25%;">작성일시</th>
+        <th style="width:14%;">답변상태</th>
       </tr>
     </thead>
-      <tbody>
+    <tbody>
      {% for question in question_list.items %}
       <tr>
-        <!-- 번호 -->
         <td>{{ loop.index + ((question_list.page-1) * question_list.per_page) }}</td>
-
-        <!-- 제목 -->
         <td>
           <a href="{{ url_for('question.detail', question_id=question.id) }}">
             {{ question.subject }}
           </a>
         </td>
-
-        <!-- 작성일시 -->
         <td>{{ question.create_date|datetime }}</td>
-
-        <!-- 답변상태 -->
         <td>
           {% if question.answer_set|length > 0 %}
             <span class="status-done">답변완료</span>
@@ -43,7 +36,7 @@
      {% endfor %}
     </tbody>
   </table>
-  <!-- 버튼 -->
+
   <div class="d-flex justify-content-start my-3">
     <a href="{{ url_for('question.create') }}" class="btn btn-orange">
       ✍ 질문 등록하기
@@ -51,7 +44,6 @@
   </div>
 </div>
 
-<!-- 페이징 -->
 <div class="paging-fixed">
   <ul class="pagination">
     {% if question_list.has_prev %}
