@@ -38,7 +38,6 @@ def create_app():
     app.register_blueprint(sub_views.bp)
     app.register_blueprint(course_views.bp)
     app.register_blueprint(reservation_views.bp)
-    app.register_blueprint(sub_views.bp)
 
     # 필터
     from .filter import format_datetime
